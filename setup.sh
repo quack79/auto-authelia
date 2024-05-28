@@ -104,7 +104,7 @@ echo " "
 echo " "
 echo -e "\e[1;33mCreating the docker-compose file...\e[0m"
 # Create compose file
-echo "version: '3.3'
+echo "
 services:
   authelia:
     image: authelia/authelia

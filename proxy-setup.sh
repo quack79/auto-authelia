@@ -27,7 +27,7 @@ case $chooseproxy in
     touch /home/$USER/auto-authelia/nginx-proxy-manager/docker-compose.yml
 
     # Appending docker-compose code into the file
-    echo "version: '3'
+    echo "
 services:
   app:
     image: 'jc21/nginx-proxy-manager:latest'
@@ -56,7 +56,7 @@ if [ "$npmstart"  = y ]; then
   echo " "
   echo " "
   cd /home/$USER/auto-authelia/nginx-proxy-manager
-  docker-compose up -d
+  docker compose up -d
   echo " "
   echo -e "\e[1:32mDone.\e[0m"
 elif [ "$npmstart" = n ]; then
@@ -125,7 +125,7 @@ echo -e "\e[1;33mVisit the auto-authelia github page for more instructions.\e[0m
     mkdir /home/$USER/auto-authelia/caddy
     touch /home/$USER/auto-authelia/caddy/docker-compose.yml
 
-    echo 'version: "3.7"
+    echo '
 
 services:
   caddy:
@@ -168,7 +168,7 @@ service.example.com {
 
     if [ "$cadstart" = y ]; then
       cd /home/$USER/auto-authelia/caddy
-      docker-compose up -d
+      docker compose up -d
     elif [ "$cadstart" = n ]; then
       echo -e "\e[1;33mSkipping...\e[0m"
     else
